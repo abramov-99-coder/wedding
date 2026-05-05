@@ -1245,6 +1245,15 @@ body {
         font-size: 1.8rem;
     }
     
+        .timeline-time {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+        display: inline;      /* ← Чтобы h3 был в одной строке с временем */
+    }
     .timeline::before {
         left: 20px;
         transform: none;
