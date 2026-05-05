@@ -366,7 +366,7 @@ function openEnvCard() {
     
     // Включаем музыку
     if (music) {
-        music.volume = 0.4;
+        music.volume = 0.2;
         music.play().catch(e => console.log('Музыка не запустилась'));
     }
     
