@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Паша + Дана | Свадебное приглашение</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Павел + Дана | Свадебное приглашение</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Marck+Script&family=Tangerine:wght@400;700&family=Great+Vibes&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Стили для центрирования экрана благодарности */
         #rsvp-container {
-            min-height: 500px; /* Резервируем место, чтобы страница не прыгала */
+            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -26,15 +25,15 @@
         }
 
         .rsvp-success h3 {
-            font-family: 'Caveat', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            color: #e74c3c;
+            color: #c4a35a;
             margin-bottom: 10px;
         }
 
         .rsvp-success p {
             font-size: 1.2rem;
-            color: #333;
+            color: #f5f0e8;
         }
 
         @keyframes fadeInScale {
@@ -44,28 +43,94 @@
     </style>
 </head>
 <body>
+    <!-- МУЗЫКА -->
+    <audio id="envMusic" loop>
+        <source src="music/lotr-theme.mp3" type="audio/mpeg">
+        <source src="music/lotr-theme.ogg" type="audio/ogg">
+    </audio>
+    <!-- КОНВЕРТ КАК НА РЕФЕРЕНСЕ -->
+<section class="envelope-ref">
+    <div class="env-card" onclick="openEnvCard()">
+        <!-- Клапан сверху -->
+        <div class="env-flap">
+            <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="none">
+                <path d="M0 0 Q150 180 300 0" fill="#3d4a3d"/>
+            </svg>
+            <span class="env-flap-text">Приглашение</span>
+        </div>
+        
+        <!-- Тело конверта -->
+        <div class="env-body">
+            <!-- Пуговицы и шнурок -->
+            <div class="env-buttons">
+                <div class="env-btn top-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="#4a3520"/>
+                        <circle cx="12" cy="12" r="4" fill="#c4a35a"/>
+                    </svg>
+                </div>
+                <div class="env-string">
+                    <svg viewBox="0 0 100 80" width="80" height="60">
+                        <path d="M20 60 Q30 40 50 50 Q70 60 80 30" fill="none" stroke="#4a3520" stroke-width="1.5"/>
+                        <circle cx="20" cy="60" r="3" fill="none" stroke="#4a3520" stroke-width="1"/>
+                    </svg>
+                </div>
+                <div class="env-btn bottom-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="#4a3520"/>
+                        <circle cx="12" cy="12" r="4" fill="#c4a35a"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <p class="env-tap">НАЖМИТЕ ЗДЕСЬ</p>
+            
+            <!-- Поля адреса -->
+            <div class="env-fields">
+                <div class="env-field">
+                    <span class="env-label">От кого:</span>
+                    <span class="env-value">Павел и Дана</span>
+                </div>
+                <div class="env-line"></div>
+                <div class="env-field">
+                    <span class="env-label">Кому:</span>
+                    <span class="env-value">Дорогим гостям</span>
+                </div>
+                <div class="env-line"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="hero">
         <div class="polaroid-container">
             <div class="polaroid polaroid-left">
-                <div class="polaroid-image"><img src="sasha_child.jpg" alt="Паша"></div>
-                <p class="polaroid-caption">Паша</p>
+                <div class="polaroid-image"><img src="Pasha sidit3.jpg" alt="Паша"></div>
+                <p class="polaroid-caption">Павел</p>
             </div>
             <div class="polaroid polaroid-right">
-                <div class="polaroid-image"><img src="nastya_child.jpg" alt="Дана"></div>
+                <div class="polaroid-image"><img src="Dana.jpg" alt="Дана"></div>
                 <p class="polaroid-caption">Дана</p>
             </div>
         </div>
-        <h1 class="couple-names">Паша + Дана</h1>
-        <div class="heart-container">
-            <svg class="hand-drawn-heart" viewBox="0 0 100 100">
-                <path d="M50 85 C50 85, 10 60, 10 35 C10 20, 25 10, 40 15 C50 18, 50 30, 50 30 C50 30, 50 18, 60 15 C75 10, 90 20, 90 35 C90 60, 50 85, 50 85 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-            </svg>
+        <h1 class="couple-names">Павел + Дана</h1>
+        <p class="elven-quote">"Это кольцо не было выковано в огне Ородруина, но оно скреплено обещанием, которое сильнее любой магии Средиземья"</p>
+        
+        <!-- КОЛЬЦО ВСЕВЛАСТИЯ — исправлено -->
+        <div class="ring-container">
+            <img src="кольцо.png" class="one-ring" alt="Кольцо Всевластия">
         </div>
     </section>
 
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
+
     <section class="story">
-        <h2 class="section-title">Узнали?</h2>
+        <h2 class="section-title">Это мы</h2>
         <p class="story-text">
             Время пронеслось незаметно, и у этих<br>
             двух милых деток скоро свадьба!<br>
@@ -73,11 +138,18 @@
         </p>
         <div class="couple-photo-container">
             <div class="polaroid couple-polaroid">
-                <div class="polaroid-image"><img src="couple_photo.jpg" alt="Паша и Дана"></div>
-                <p class="polaroid-caption">Сердца полны любви</p>
+                <div class="polaroid-image"><img src="Главное.png" alt="Паша и Дана"></div>
+                <p class="polaroid-caption"></p>
             </div>
         </div>
     </section>
+
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
 
     <section class="invitation">
         <h2 class="section-title script">Дорогие и любимые</h2>
@@ -87,11 +159,37 @@
             Приглашаем отметить этот день<br>
             вместе с нами!
         </p>
-        <div class="date-container"><span class="date">18/09/26</span></div>
+                <!-- УЛЬТРА-МИНИМАЛИСТИЧНЫЙ КАЛЕНДАРЬ — без подложки -->
+<div class="calendar-minimal">
+    <div class="cal-month">Сентябрь 2026</div>
+    <div class="cal-grid">
+        <span class="cal-dn">пн</span><span class="cal-dn">вт</span><span class="cal-dn">ср</span><span class="cal-dn">чт</span>
+        <span class="cal-dn">пт</span><span class="cal-dn">сб</span><span class="cal-dn">вс</span>
+        
+        <span class="cal-d empty"></span>
+        <span class="cal-d">1</span><span class="cal-d">2</span><span class="cal-d">3</span>
+        <span class="cal-d">4</span><span class="cal-d">5</span><span class="cal-d">6</span>
+        <span class="cal-d">7</span><span class="cal-d">8</span><span class="cal-d">9</span>
+        <span class="cal-d">10</span><span class="cal-d">11</span><span class="cal-d">12</span>
+        <span class="cal-d">13</span><span class="cal-d">14</span><span class="cal-d">15</span>
+        <span class="cal-d">16</span><span class="cal-d">17</span><span class="cal-d active">18</span>
+        <span class="cal-d">19</span><span class="cal-d">20</span><span class="cal-d">21</span>
+        <span class="cal-d">22</span><span class="cal-d">23</span><span class="cal-d">24</span>
+        <span class="cal-d">25</span><span class="cal-d">26</span><span class="cal-d">27</span>
+        <span class="cal-d">28</span><span class="cal-d">29</span><span class="cal-d">30</span>
+    </div>
+</div>
     </section>
 
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
+
     <section class="program">
-        <p class="time">15:30</p>
+        <div class="elven-rune">ᚠᚢᚦᚨ</div>
         <h2 class="section-title">Программа дня</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -99,54 +197,99 @@
                 <div class="timeline-content"><h3>Welcome</h3><p>Время пролетит<br>незаметно за игристым<br>и новыми знакомствами</p></div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-time">17:00</div>
+                <div class="timeline-time">16:30</div>
                 <div class="timeline-content"><h3>Церемония</h3><p>Будем очень рады<br>разделить этот важный<br>момент с вами</p></div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-time">18:00</div>
+                <div class="timeline-time">17:30</div>
                 <div class="timeline-content"><h3>Банкет</h3><p>Насладитесь этим<br>вечером, будет много<br>любви, танцев и веселья</p></div>
             </div>
         </div>
     </section>
 
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
+
     <section class="venue">
         <h2 class="section-title">Место проведения</h2>
-        <div class="venue-image-container"><img src="venue.jpg" alt="Место проведения" class="venue-image"></div>
+        <div class="venue-image-container"><img src="Белая дача.jpg" alt="Место проведения" class="venue-image"></div>
         <div class="venue-info">
             <p class="venue-name">«Белая дача»</p>
             <p class="venue-address">Банкет состоится по адресу:<br>г. Елабуга, ул. Садовая 2Б</p>
-            <a href="https://yandex.ru/maps/?text=Елабуга+Садовая+2Б" target="_blank" class="btn btn-venue">Построить маршрут</a>
+            <a href="https://yandex.ru/maps/org/belaya_dacha/98656528942/?ll=52.001568%2C55.739666&z=16.99" target="_blank" class="btn btn-venue">Построить маршрут</a>
         </div>
     </section>
+
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
 
     <section class="dresscode">
         <h2 class="section-title">Дресс-код</h2>
-        <p class="dresscode-text">Мы очень старались сделать праздник<br>красивым и будем рады, если в своих<br>нарядах вы поддержите цветовую гамму<br>нашей свадьбы:</p>
+        <p class="dresscode-text">Мы очень старались сделать праздник<br>красивым и будем рады, если в своих<br>нарядах вы поддержите цветовую гамму<br>нашей свадьбы<br>Очень просим вас, не надевать белые<br>и черные вещи</p>
         <div class="color-palette">
-            <div class="color-item" style="background-color: #f5e6d3;"></div>
-            <div class="color-item" style="background-color: #e8d4c4;"></div>
-            <div class="color-item" style="background-color: #d4a5a5;"></div>
-            <div class="color-item" style="background-color: #c9b8d4;"></div>
-            <div class="color-item" style="background-color: #b8c9d4;"></div>
+            <div class="color-item" style="background-color: #5e3a2a;"></div>
+            <div class="color-item" style="background-color: #8f7d71;"></div>
+            <div class="color-item" style="background-color: #dac8b4;"></div>
+            <div class="color-item" style="background-color: #97966a;"></div>
+            <div class="color-item" style="background-color: #8d9363;"></div>
+            <div class="color-item" style="background-color: #313e20;"></div>
         </div>
         <p class="inspiration-text">вдохновляйтесь образами</p>
-        <div class="inspiration-image"><img src="dresscode_inspiration.jpg" alt="Вдохновение"></div>
+        <div class="carousel-container dress-code-carousel">
+    <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+    
+    <div class="carousel-track-container">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="Без названия.jpg" class="lightbox-enabled" alt="Образ 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="кактак.jpg" class="lightbox-enabled" alt="Образ 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="цветной.jpg" class="lightbox-enabled" alt="Образ 3">
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+</div>
     </section>
+
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
 
     <section class="wishes">
         <h2 class="section-title">Пожелания</h2>
-        <div class="heart-divider">
-            <svg class="small-heart" viewBox="0 0 50 50" width="30"><path d="M25 45 C25 45, 5 30, 5 17.5 C5 10, 12.5 5, 20 7.5 C25 9, 25 15, 25 15 C25 15, 25 9, 30 7.5 C37.5 5, 45 10, 45 17.5 C45 30, 25 45, 25 45 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/></svg>
+        <div class="elven-divider">
+            <svg class="elven-leaf" viewBox="0 0 50 50" width="30">
+                <path d="M25 2 C25 2, 10 15, 10 28 C10 38, 18 45, 25 48 C32 45, 40 38, 40 28 C40 15, 25 2, 25 2 Z" 
+                      fill="none" stroke="#c4a35a" stroke-width="1.5"/>
+            </svg>
         </div>
-        <p class="wishes-text">Сразу после свадьбы мы улетаем<br>в свадебное путешествие, поэтому мы<br>не успеем насладиться красотой подаренных<br>цветов и будем рады, если вместо цветов<br>вы решите подарить нам бутылочку хорошего вина</p>
-        <p class="wishes-text second">Если хотите подарить нам ценный<br>и нужный подарок, мы будем очень благодарны<br>за вклад в бюджет нашей молодой семьи</p>
+        <p class="wishes-text">После свадьбы мы планируем<br>улететь в свадебное путешествие, если<br>вы хотите подарить нам ценный<br>и нужный подарок, мы будем очень благодарны<br>за вклад в бюджет нашей молодой семьи</p>
+        
     </section>
+
+    
 
     <section class="rsvp" id="rsvp">
         <div id="rsvp-container">
             <div id="rsvp-content" style="width: 100%;">
                 <h2 class="section-title">Анкета гостя</h2>
-                <p class="rsvp-subtitle">Просим вас ответить на несколько<br>вопросов до 19 октября, это поможет<br>нам в организации торжества</p>
+                <p class="rsvp-subtitle">Просим вас ответить на несколько<br>вопросов до 1 августа, это поможет<br>нам в организации торжества</p>
                 
                 <form class="rsvp-form" id="rsvpForm" 
                       action="https://docs.google.com/forms/d/e/1FAIpQLSeoP4XEHM3UASw22M88UtpUxYkVi3VTciIMylNNPjc2gNoBbg/formResponse" 
@@ -178,6 +321,13 @@
                             <label class="checkbox-label"><input type="checkbox" name="entry.1983233544" value="Безалкогольные напитки"><span class="checkbox-custom"></span> Безалкогольные напитки</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label>Останетесь ли вы на 2 день?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="entry.1193871593" value="Да"><span class="radio-custom"></span> Да</label>
+                            <label class="radio-label"><input type="radio" name="entry.1193871593" value="Нет"><span class="radio-custom"></span> Нет</label>
+                        </div>
+                    </div>
                     
                     <button type="submit" class="btn btn-submit">Отправить</button>
                 </form>
@@ -186,8 +336,11 @@
             <div id="rsvp-thanks" class="rsvp-success">
                 <h3>Спасибо!</h3>
                 <p>Ваш ответ успешно получен.<br>Будем рады видеть вас на нашем празднике!</p>
-                <div class="heart-divider" style="margin-top: 20px;">
-                    <svg class="small-heart" viewBox="0 0 50 50" width="50"><path d="M25 45 C25 45, 5 30, 5 17.5 C5 10, 12.5 5, 20 7.5 C25 9, 25 15, 25 15 C25 15, 25 9, 30 7.5 C37.5 5, 45 10, 45 17.5 C45 30, 25 45, 25 45 Z" fill="#e74c3c"/></svg>
+                <div class="elven-divider" style="margin-top: 20px;">
+                    <svg class="elven-leaf" viewBox="0 0 50 50" width="50">
+                        <path d="M25 2 C25 2, 10 15, 10 28 C10 38, 18 45, 25 48 C32 45, 40 38, 40 28 C40 15, 25 2, 25 2 Z" 
+                              fill="none" stroke="#c4a35a" stroke-width="2"/>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -196,19 +349,22 @@
             var submitted = false;
             function showThanks() {
                 if(submitted) {
-                    // Убираем форму
                     document.getElementById('rsvp-content').style.display = 'none';
-                    // Показываем красивый блок
                     document.getElementById('rsvp-thanks').style.display = 'block';
-                    // Плавно скроллим к началу блока анкеты, чтобы "Спасибо" было по центру
                     document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // Очищаем URL
                     window.history.replaceState(null, null, window.location.pathname);
                 }
             }
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="showThanks();"></iframe>
     </section>
+
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
 
     <section class="contacts">
     <h2 class="section-title">Контакты</h2>
@@ -218,32 +374,45 @@
         заранее с нашим организатором
     </p>
     <div class="organizer">
-        <p class="organizer-name">Гульшат: +7 (900) 000-00-00</p>
+        <p class="organizer-name">Гульшат: +7(965)612-42-12</p>
         
         <div class="social-links">
-            <a href="https://wa.me/79000000000" target="_blank" class="social-link wa">
+            <a href="https://wa.me/79656124212" target="_blank" class="social-link wa">
                 <svg width="24" height="24" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
             
-            <a href="https://t.me/username" target="_blank" class="social-link tg">
+            <a href="https://t.me/wedding_chelny" target="_blank" class="social-link tg">
                 <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.891 8.146l-1.841 8.678c-.139.617-.504.77-.97.509l-2.801-2.064-1.352 1.3c-.15.15-.276.276-.566.276l.201-2.849 5.185-4.683c.226-.2-.049-.311-.351-.11l-6.408 4.035-2.762-.864c-.601-.188-.612-.601.125-.889l10.787-4.159c.5-.183.937.116.743.951z"/></svg>
             </a>
         </div>
     </div>
 </section>
 
+    <div class="elven-divider">
+        <svg viewBox="0 0 300 30" width="200" height="20">
+            <path d="M0 15 Q75 5, 150 15 T300 15" stroke="#c4a35a" fill="none" stroke-width="1"/>
+            <circle cx="150" cy="15" r="3" fill="#c4a35a"/>
+        </svg>
+    </div>
+
     <section class="footer">
         <h2 class="footer-title">Будем вас ждать!</h2>
-        <div class="heart-divider">
-            <svg class="small-heart" viewBox="0 0 50 50" width="30"><path d="M25 45 C25 45, 5 30, 5 17.5 C5 10, 12.5 5, 20 7.5 C25 9, 25 15, 25 15 C25 15, 25 9, 30 7.5 C37.5 5, 45 10, 45 17.5 C45 30, 25 45, 25 45 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/></svg>
+        <div class="elven-divider">
+            <svg class="elven-leaf" viewBox="0 0 50 50" width="30">
+                <path d="M25 2 C25 2, 10 15, 10 28 C10 38, 18 45, 25 48 C32 45, 40 38, 40 28 C40 15, 25 2, 25 2 Z" 
+                      fill="none" stroke="#c4a35a" stroke-width="1.5"/>
+            </svg>
         </div>
-        <div class="footer-photo"><img src="couple_footer.jpg" alt="Паша и Дана"></div>
-        <p class="footer-signature">С большой любовью,<br>Паша и Дана!</p>
+        <div class="footer-photo"><img src="конец.jpg" alt="Паша и Дана"></div>
+        <p class="footer-signature">С большой любовью,<br>Павел и Дана!</p>
+        <p class="elven-epilog">"Тьма еще не победила… Пока мы верны друг другу, мы не пропадем"</p>
     </section>
 
    <div id="lightbox" class="lightbox">
     <span class="close-lightbox">&times;</span>
+    <button class="lightbox-nav prev-lbox" id="prevLightbox">&#10094;</button>
     <img class="lightbox-content" id="lightbox-img">
+    <button class="lightbox-nav next-lbox" id="nextLightbox">&#10095;</button>
 </div>
 <script src="script.js"></script>
 </body>

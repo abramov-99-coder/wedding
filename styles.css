@@ -1,4 +1,30 @@
-/* Reset and Base Styles */
+/* ============================================
+   ВЛАСТЕЛИН КОЛЕЦ — СВАДЕБНОЕ ПРИГЛАШЕНИЕ
+   Новая цветовая гамма: кремовый + лесной зелёный
+   ============================================ */
+
+/* ============================================
+   ЛОКАЛЬНЫЕ ШРИФТЫ — Aniron
+   ============================================ */
+
+@font-face {
+    font-family: 'Aniron';
+    src: url('fonts/Aniron.woff2') format('woff2'),
+         url('fonts/Aniron.woff') format('woff');
+    font-weight: 400;        /* Regular */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aniron';
+    src: url('fonts/Aniron-Bold.woff2') format('woff2'),
+         url('fonts/Aniron-Bold.woff') format('woff');
+    font-weight: 700;        /* Bold */
+    font-style: normal;
+    font-display: swap;
+}
+   /* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,37 +32,131 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --light-gray: #f8f8f8;
-    --border-color: #e0e0e0;
+    --gold: #c4a35a;
+    --gold-light: #d4b76a;
+    --gold-dark: #8a7340;
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d4;
+    --forest: #2d3a2d;
+    --forest-light: #3d4a3d;
+    --forest-dark: #1e2a1e;
+    --text-dark: #4a4a3a;
+    --text-muted: #7a7a6a;
+    --border-gold: rgba(196, 163, 90, 0.3);
+    --shadow-gold: rgba(196, 163, 90, 0.15);
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Typography */
+/* ============================================
+   ЭЛЬФИЙСКИЕ ЭЛЕМЕНТЫ
+   ============================================ */
+
+.elven-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.elven-divider::before,
+.elven-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.elven-divider::before {
+    left: calc(50% - 130px);
+}
+
+.elven-divider::after {
+    right: calc(50% - 130px);
+}
+
+.elven-leaf {
+    filter: drop-shadow(0 0 8px rgba(196, 163, 90, 0.4));
+}
+
+.elven-quote {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-align: center;
+    margin: 0.5rem 0 1.5rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(196, 163, 90, 0.3);
+    max-width: 600px;        /* Ограничь ширину */
+    margin-left: auto;       /* Центрирование */
+    margin-right: auto;      /* Центрирование */
+    line-height: 1.4;        /* Межстрочный интервал */
+}
+
+.elven-date {
+    display: block;
+    font-family: 'Tangerine', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.elven-epilog {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-top: 1.5rem;
+    font-style: italic;
+    text-shadow: 0 0 15px rgba(196, 163, 90, 0.2);
+}
+
+.elven-rune {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 8px;
+    opacity: 0.7;
+}
+
+/* ============================================
+   ТИПОГРАФИКА
+   ============================================ */
+
 .section-title {
-    font-family: 'Caveat', cursive;
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: var(--primary-color);
+    font-family: 'Aniron', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--gold);
     text-align: center;
     margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(196, 163, 90, 0.2);
 }
 
 .section-title.script {
-    font-size: 2.8rem;
+    font-size: 1.6rem;
+    font-family: 'Aniron', cursive;
+    color: var(--gold);
+    font-weight: 400;
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -44,7 +164,23 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    background: 
+        linear-gradient(180deg, rgba(245, 240, 232, 0.9) 0%, rgba(245, 240, 232, 0.98) 100%),
+        url('hero-bg.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 30% 20%, rgba(196, 163, 90, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(196, 163, 90, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .polaroid-container {
@@ -54,18 +190,27 @@ body {
     gap: -20px;
     margin-bottom: 2rem;
     position: relative;
+    z-index: 1;
 }
 
 .polaroid {
-    background: white;
+    background: var(--cream);
     padding: 12px 12px 40px 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 
+        0 4px 20px rgba(0,0,0,0.15),
+        0 0 0 1px var(--border-gold),
+        inset 0 0 20px rgba(196, 163, 90, 0.05);
     transform: rotate(-3deg);
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    border-radius: 2px;
 }
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.02);
+    box-shadow: 
+        0 8px 30px rgba(0,0,0,0.2),
+        0 0 0 1px var(--gold),
+        inset 0 0 30px rgba(196, 163, 90, 0.1);
 }
 
 .polaroid-right {
@@ -82,55 +227,98 @@ body {
     width: 200px;
     height: 250px;
     overflow: hidden;
-    background: #f0f0f0;
+    background: var(--cream-dark);
+    border: 1px solid var(--border-gold);
 }
 
 .polaroid-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: sepia(10%) contrast(1.05);
+    transition: filter 0.3s ease;
+}
+
+.polaroid:hover .polaroid-image img {
+    filter: sepia(5%) contrast(1.1);
 }
 
 .polaroid-caption {
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', cursive;
+    font-size: 1.8rem;
     text-align: center;
     margin-top: 10px;
-    color: var(--primary-color);
+    color: var(--gold);
+    font-weight: 400;
 }
 
 .couple-names {
-    font-family: 'Caveat', cursive;
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin: 1rem 0;
-    font-weight: 500;
+    font-family: 'Aniron', serif;
+    font-size: 2.0rem;
+    color: var(--gold);
+    margin: 1rem 0 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 30px rgba(196, 163, 90, 0.3);
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
 }
 
-.heart-container {
-    width: 80px;
-    height: 80px;
-    margin-top: 0.5rem;
-}
+/* ============================================
+   КОЛЬЦО ВСЕВЛАСТИЯ — реалистичная тень
+   ============================================ */
 
-.hand-drawn-heart {
+.ring-container {
     width: 100%;
-    height: 100%;
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    padding: 0 0 30px 0; /* Увеличил отступ снизу для длинной тени */
 }
 
-/* Story Section */
+
+.one-ring {
+    width: 300px;
+    height: auto;
+    display: block;
+    /* Легкая дымка вокруг самого объекта */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    animation: ringFloat 5s ease-in-out infinite;
+}
+
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .one-ring { width: 140px; }
+}
+
+/* ============================================
+   STORY SECTION
+   ============================================ */
+
 .story {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--bg-color);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    background: var(--cream);
+    position: relative;
 }
 
-.story-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    margin-bottom: 2rem;
+.story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .couple-photo-container {
@@ -149,34 +337,89 @@ body {
     height: 300px;
 }
 
-/* Invitation Section */
+/* ============================================
+   INVITATION SECTION
+   ============================================ */
+
 .invitation {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--light-gray);
+    background: var(--cream-dark);
+    position: relative;
+}
+
+.invitation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .invitation-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+    color: var(--text-dark);
 }
 
 .date-container {
     display: inline-block;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--gold);
     border-radius: 50%;
     padding: 1.5rem 2rem;
     margin-top: 1rem;
+    background: rgba(196, 163, 90, 0.05);
+    box-shadow: 
+        0 0 20px rgba(196, 163, 90, 0.1),
+        inset 0 0 20px rgba(196, 163, 90, 0.05);
+    position: relative;
+}
+
+.date-container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold);
+    pointer-events: none;
 }
 
 .date {
-    font-family: 'Caveat', cursive;
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--gold);
+    display: block;
+    font-weight: 400;
 }
 
-/* Program Section — timeline */
+/* ============================================
+   PROGRAM SECTION — timeline
+   ============================================ */
+
+.program {
+    padding: 4rem 2rem;
+    background: var(--cream);
+    position: relative;
+}
+
+.program::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
 .timeline {
     max-width: 800px;
     margin: 4rem auto;
@@ -190,11 +433,11 @@ body {
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 4px;
-    background: #2c3e50;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--gold), var(--gold), transparent);
     transform: translateX(-50%);
-    border-radius: 999px;
     z-index: 1;
+    opacity: 0.6;
 }
 
 .timeline-item {
@@ -230,24 +473,28 @@ body {
 }
 
 .timeline-time {
-    font-family: 'Caveat', cursive;
-    font-size: 1.8rem;
-    color: #2c3e50;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
     white-space: nowrap;
     flex-shrink: 0;
+    text-shadow: 0 0 10px rgba(196, 163, 90, 0.3);
+    font-weight: 400;
 }
 
 .timeline-content h3 {
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    color: #2c3e50;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
     margin: 0;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 .timeline-content p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.4;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -256,89 +503,144 @@ body {
     position: absolute;
     left: 50%;
     top: 0.8rem;
-    width: 18px;
-    height: 18px;
-    background: white;
-    border: 4px solid #2c3e50;
+    width: 16px;
+    height: 16px;
+    background: var(--cream);
+    border: 2px solid var(--gold);
     border-radius: 50%;
     z-index: 3;
     transform: translateX(-50%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 0 10px rgba(196, 163, 90, 0.4);
 }
 
-/* Venue Section */
+/* ============================================
+   VENUE SECTION
+   ============================================ */
+
 .venue {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--light-gray);
+    background: var(--cream-dark);
+    position: relative;
+}
+
+.venue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .venue-image-container {
     max-width: 500px;
     margin: 0 auto 2rem;
-    border-radius: 10px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 
+        0 4px 20px rgba(0,0,0,0.15),
+        0 0 0 1px var(--border-gold);
+    border: 1px solid var(--border-gold);
 }
 
 .venue-image {
     width: 100%;
     height: auto;
     display: block;
+    filter: sepia(10%) contrast(1.05);
 }
 
 .venue-name {
-    font-family: 'Caveat', cursive;
-    font-size: 1.8rem;
-    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
     margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 .venue-address {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--text-muted);
 }
 
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    border-radius: 25px;
+    border-radius: 2px;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid var(--gold);
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    background: transparent;
+    color: var(--gold);
+    position: relative;
+    overflow: hidden;
+    font-weight: 400;
 }
 
-.btn-venue {
-    background: var(--primary-color);
-    color: white;
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-venue:hover {
-    background: #34495e;
+    background: rgba(196, 163, 90, 0.1);
+    box-shadow: 0 0 20px rgba(196, 163, 90, 0.2);
     transform: translateY(-2px);
 }
 
-/* Dress Code Section */
+/* ============================================
+   DRESS CODE SECTION
+   ============================================ */
+
 .dresscode {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--bg-color);
+    background: var(--cream);
+    position: relative;
+}
+
+.dresscode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .dresscode-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+    color: var(--text-dark);
 }
 
 .color-palette {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 1rem;
 }
 
@@ -346,35 +648,64 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 
+        0 2px 10px rgba(0,0,0,0.15),
+        0 0 0 2px var(--border-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-item:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 4px 15px rgba(0,0,0,0.2),
+        0 0 0 2px var(--gold),
+        0 0 15px rgba(196, 163, 90, 0.3);
 }
 
 .inspiration-text {
-    font-family: 'Caveat', cursive;
-    font-size: 1.3rem;
-    color: var(--primary-color);
+    font-family: 'Marck Script', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
     margin: 1.5rem 0;
+    font-weight: 400;
 }
 
 .inspiration-image {
     max-width: 300px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border: 1px solid var(--border-gold);
 }
 
 .inspiration-image img {
     width: 100%;
     height: auto;
     display: block;
+    filter: sepia(10%);
 }
 
-/* Wishes Section */
+/* ============================================
+   WISHES SECTION
+   ============================================ */
+
 .wishes {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--light-gray);
+    background: var(--cream-dark);
+    position: relative;
+}
+
+.wishes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .heart-divider {
@@ -386,30 +717,47 @@ body {
 .small-heart {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 0 8px rgba(196, 163, 90, 0.4));
 }
 
 .wishes-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 .wishes-text.second {
     margin-top: 2rem;
 }
 
-/* RSVP Section */
+/* ============================================
+   RSVP SECTION
+   ============================================ */
+
 .rsvp {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--bg-color);
+    background: var(--forest);
+    position: relative;
+}
+
+.rsvp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .rsvp-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .rsvp-form {
@@ -424,18 +772,35 @@ body {
 
 .form-group label {
     display: block;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 .form-group input[type="text"] {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    border: 1px solid var(--border-gold);
+    border-radius: 2px;
+    font-size: 1.1rem;
+    font-family: 'Cormorant Garamond', serif;
+    background: rgba(45, 58, 45, 0.5);
+    color: var(--cream);
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(196, 163, 90, 0.2);
+    background: rgba(45, 58, 45, 0.8);
+}
+
+.form-group input[type="text"]::placeholder {
+    color: var(--text-muted);
 }
 
 .radio-group, .checkbox-group {
@@ -449,8 +814,8 @@ body {
     display: flex !important;
     align-items: center !important;
     cursor: pointer;
-    font-size: 1rem;
-    color: var(--text-color);
+    font-size: 1.1rem;
+    color: var(--cream);
     user-select: none;
     line-height: 1.2;
     width: fit-content;
@@ -469,12 +834,18 @@ body {
     height: 20px !important;
     min-width: 20px !important;
     min-height: 20px !important;
-    border: 2px solid #ccc !important;
+    border: 2px solid var(--gold-dark) !important;
     border-radius: 50% !important;
     margin-right: 12px;
     position: relative;
     flex-shrink: 0 !important;
-    background-color: #fff !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 10px rgba(196, 163, 90, 0.3);
 }
 
 .radio-label input[type="radio"]:checked + .radio-custom::after {
@@ -485,8 +856,9 @@ body {
     transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
-    background-color: #2c3e50 !important;
+    background-color: var(--gold) !important;
     border-radius: 50%;
+    box-shadow: 0 0 8px rgba(196, 163, 90, 0.5);
 }
 
 .checkbox-custom {
@@ -494,17 +866,19 @@ body {
     height: 20px !important;
     min-width: 20px !important;
     min-height: 20px !important;
-    border: 2px solid #ccc !important;
-    border-radius: 4px !important;
+    border: 2px solid var(--gold-dark) !important;
+    border-radius: 2px !important;
     margin-right: 12px;
     position: relative;
     flex-shrink: 0 !important;
-    background-color: #fff !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
-    background-color: #2c3e50 !important;
-    border-color: #2c3e50 !important;
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 10px rgba(196, 163, 90, 0.3);
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
@@ -515,41 +889,82 @@ body {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
-    background-color: #fff;
-    border-radius: 2px;
+    background-color: var(--forest);
+    border-radius: 1px;
 }
 
 .btn-submit {
-    background: var(--primary-color);
-    color: white;
+    background: transparent;
+    color: var(--gold);
     width: 100%;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: 1rem;
+    border: 1px solid var(--gold);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 400;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(196, 163, 90, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-submit:hover::before {
+    left: 100%;
 }
 
 .btn-submit:hover:not(:disabled) {
-    background: #34495e;
+    background: rgba(196, 163, 90, 0.1);
+    box-shadow: 0 0 25px rgba(196, 163, 90, 0.2);
 }
 
 .btn:disabled {
-    background-color: #ccc !important;
+    background-color: rgba(100, 100, 100, 0.3) !important;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.5;
+    border-color: var(--text-muted);
+    color: var(--text-muted);
 }
 
-/* --- Секция Контакты (как на фото) --- */
+/* ============================================
+   CONTACTS SECTION
+   ============================================ */
+
 .contacts {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--light-gray);
+    background: var(--cream);
+    position: relative;
+}
+
+.contacts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
 }
 
 .organizer-name {
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
     margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 /* Стили для иконок мессенджеров */
@@ -566,17 +981,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2c3e50; /* Твой основной темный цвет */
-    color: white !important;
+    background-color: transparent;
+    color: var(--gold) !important;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 1px solid var(--gold-dark);
 }
 
 .social-link:hover {
     transform: translateY(-3px);
-    background-color: #e74c3c; /* Красный цвет при наведении */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: rgba(196, 163, 90, 0.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(196, 163, 90, 0.3);
+    color: var(--gold-light) !important;
 }
 
 .social-link svg {
@@ -585,40 +1003,230 @@ body {
     fill: currentColor;
 }
 
-/* Если ты используешь иконочные шрифты (Font Awesome) */
-.social-link i {
-    font-size: 24px;
+.social-link:hover svg {
+    filter: drop-shadow(0 0 5px rgba(196, 163, 90, 0.5));
 }
 
-/* --- Секция Футер (как на фото) --- */
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+
 .footer {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--bg-color);
+    background: var(--forest);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+.footer-title {
+    font-family: 'Aniron', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
 
 .footer-photo {
     max-width: 280px;
     margin: 2rem auto;
-    border-radius: 10px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 
+        0 4px 20px rgba(0,0,0,0.2),
+        0 0 0 1px var(--border-gold);
+    border: 1px solid var(--border-gold);
 }
 
 .footer-photo img {
     width: 100%;
     height: auto;
     display: block;
+    filter: sepia(15%) contrast(1.05);
 }
 
 .footer-signature {
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    font-family: 'Cormorant Garamond', cursive;
+    font-size: 1.6rem;
+    color: var(--gold);
     margin-top: 1rem;
+    font-weight: 400;
 }
 
-/* Mobile Adaptation */
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 58, 45, 0.95);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border: 2px solid var(--gold);
+    border-radius: 2px;
+    animation: zoomIn 0.3s ease;
+    box-shadow: 0 0 40px rgba(196, 163, 90, 0.3);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--gold);
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(196, 163, 90, 0.5);
+    transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+    color: var(--gold-light);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.polaroid-image img, .venue-image, .inspiration-image, .footer-photo img {
+    cursor: zoom-in;
+}
+
+/* ============================================
+   CAROUSEL
+   ============================================ */
+
+.dress-code-carousel {
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    filter: sepia(10%);
+    transition: filter 0.3s ease;
+}
+
+.carousel-slide:hover img {
+    filter: sepia(5%) brightness(0.9);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(245, 240, 232, 0.7);
+    border: 1px solid var(--gold-dark);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--gold);
+}
+
+.carousel-btn:hover {
+    background: rgba(245, 240, 232, 0.9);
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(196, 163, 90, 0.3);
+    color: var(--gold-light);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Стрелочки внутри лайтбокса */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(45, 58, 45, 0.7);
+    color: var(--gold);
+    border: 1px solid var(--gold-dark);
+    font-size: 40px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.lightbox-nav:hover {
+    background: rgba(196, 163, 90, 0.2);
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(196, 163, 90, 0.3);
+    color: var(--gold-light);
+}
+
+.prev-lbox { left: 10px; }
+.next-lbox { right: 10px; }
+
+@media (max-width: 600px) {
+    .lightbox-nav {
+        padding: 10px;
+        font-size: 30px;
+        background: rgba(45, 58, 45, 0.5);
+    }
+}
+
+/* ============================================
+   MOBILE ADAPTATION
+   ============================================ */
+
 @media (max-width: 768px) {
     .polaroid-image {
         width: 150px;
@@ -626,7 +1234,15 @@ body {
     }
     
     .couple-names {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    .elven-quote {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
     }
     
     .timeline::before {
@@ -649,9 +1265,30 @@ body {
         flex: 1;
         padding: 0 !important;
     }
+    
+    .heart-img {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .elven-divider::before,
+    .elven-divider::after {
+        width: 40px;
+    }
+    
+    .elven-divider::before {
+        left: calc(50% - 90px);
+    }
+    
+    .elven-divider::after {
+        right: calc(50% - 90px);
+    }
 }
 
-/* Animations */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -664,47 +1301,331 @@ body {
 }
 
 section {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.8s ease-out;
 }
-/* Стили для лайтбокса */
-.lightbox {
-    display: none; /* Скрыт по умолчанию */
-    position: fixed;
-    z-index: 1000;
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(196, 163, 90, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(196, 163, 90, 0.2);
+    }
+}
+
+.date-container {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   УЛЬТРА-МИНИМАЛИСТИЧНЫЙ КАЛЕНДАРЬ — без подложки
+   ============================================ */
+
+/* Убираем старый овал */
+.date-container,
+.date,
+.elven-date {
+    display: none;
+}
+
+.calendar-minimal {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.cal-month {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    text-transform: lowercase;
+    letter-spacing: 4px;
+    margin-bottom: 0.6rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px 12px;  /* Больше воздуха между цифрами */
+    padding: 0;
+    border: none;   /* Убрали рамку */
+    background: transparent;  /* Убрали подложку */
+}
+
+.cal-dn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold-dark);
+    text-align: center;
+    padding: 0.1rem;
+    opacity: 0.4;   /* Почти незаметные */
+    text-transform: lowercase;
+    font-weight: 300;
+}
+
+.cal-d {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold-dark);
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    font-weight: 300;
+}
+
+.cal-d.empty {
+    background: transparent;
+}
+
+.cal-d.active {
+    background: var(--gold);
+    color: var(--cream);
+    font-weight: 400;
+    box-shadow: 0 1px 4px rgba(196, 163, 90, 0.2);
+}
+/* ============================================
+   ЭЛЬФИЙСКОЕ ПИСЬМО — конверт
+   ============================================ */
+
+.envelope-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные линии по бокам */
+.envelope-section::before,
+.envelope-section::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    top: 20%;
+}
+
+.envelope-section::before {
+    left: 20%;
+    transform: rotate(-20deg);
+}
+
+.envelope-section::after {
+    right: 20%;
+    transform: rotate(20deg);
+}
+
+.envelope-container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-title-top {
+    font-family: 'Marck Script', cursive;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease 0.3s forwards;
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================
+   КОНВЕРТ КАК НА РЕФЕРЕНСЕ — увеличенный
+   ============================================ */
+
+.envelope-ref {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    padding: 2rem;
+}
+
+.env-card {
+    width: 380px;        /* Было 320px */
+    height: 500px;       /* Было 420px */
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.env-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Клапан */
+.env-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 2;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.env-flap svg {
+    display: block;
+}
+
+.env-flap-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    font-family: 'Cormorant Garamond', cursive;
+    font-size: 1.8rem;     /* Было 1.8rem */
+    color: #c4a35a;
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+/* Тело конверта */
+.env-body {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Темный фон */
-    justify-content: center;
+    background: #3d4a3d;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    cursor: zoom-out;
+    padding-top: 45%;
 }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-    border: 5px solid white;
-    border-radius: 5px;
-    animation: zoomIn 0.3s ease;
+/* Пуговицы */
+.env-buttons {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -60px;
+    z-index: 5;
 }
 
-.close-lightbox {
+.env-btn {
+    width: 48px;         /* Было 40px */
+    height: 48px;        /* Было 40px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.env-btn svg {
+    width: 28px;         /* Было 24px */
+    height: 28px;        /* Было 24px */
+}
+
+.top-btn {
+    margin-bottom: -25px;
+}
+
+.bottom-btn {
+    margin-top: 20px;    /* Было 15px */
+}
+
+.env-string {
     position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
+    top: 25px;           /* Было 20px */
+    left: 50%;
+    transform: translateX(-77%);
+    z-index: 6;
+    pointer-events: none;
+    margin-top: -20px;
 }
 
-@keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.env-string svg {
+    width: 100px;        /* Было 80px */
+    height: 75px;        /* Было 60px */
 }
 
-/* Добавим курсор лупы на все фото в поляроидах */
-.polaroid-image img, .venue-image, .inspiration-image, .footer-photo img {
-    cursor: zoom-in;
+/* Текст нажать */
+.env-tap {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;  /* Было 0.7rem */
+    color: #c4a35a;
+    letter-spacing: 5px; /* Было 4px */
+    text-transform: uppercase;
+    margin-top: 2rem;    /* Было 1.5rem */
+    opacity: 0.7;
+}
+
+/* Поля адреса */
+.env-fields {
+    width: 75%;          /* Было 80% */
+    margin-top: auto;
+    margin-bottom: 2.5rem; /* Было 2rem */
+}
+
+.env-field {
+    display: flex;
+    gap: 0.8rem;         /* Было 0.5rem */
+    padding: 0.8rem 0;   /* Было 0.6rem */
+}
+
+.env-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;     /* Было 0.85rem */
+    color: #a09070;
+    opacity: 0.8;
+}
+
+.env-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;     /* Было 0.85rem */
+    color: #f5f0e8;
+    opacity: 0.9;
+}
+
+.env-line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dotted rgba(196, 163, 90, 0.3);
+    margin-top: -10px;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    .env-card {
+        width: 320px;    /* Было 280px */
+        height: 420px;   /* Было 370px */
+    }
+    
+    .env-flap-text {
+        font-size: 1.8rem; /* Было 1.5rem */
+    }
+    
+    .env-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .env-btn svg {
+        width: 24px;
+        height: 24px;
+    }
 }
