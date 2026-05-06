@@ -113,8 +113,8 @@ body {
 }
 
 .elven-epilog {
-    font-family: 'Anrion', cursive;
-    font-size: 1.2rem;
+    font-family: 'Tangerine', cursive;
+    font-size: 1.6rem;
     color: var(--gold);
     margin-top: 1.5rem;
     font-style: italic;
@@ -1057,8 +1057,8 @@ body {
 }
 
 .footer-signature {
-    font-family: 'Aniron', cursive;
-    font-size: 1.2rem;
+    font-family: 'Tangerine', cursive;
+    font-size: 1.6rem;
     color: var(--gold);
     margin-top: 1rem;
     font-weight: 400;
