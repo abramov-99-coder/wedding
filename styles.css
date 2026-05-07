@@ -1624,10 +1624,10 @@ section {
     }
     
     .env-flap-text {
-        font-size: 1.3rem; /* Было 1.5rem */
+        font-size: 1.2rem; /* Было 1.5rem */
     }
    .env-tap {
-        font-size: 1.3rem; /* Было 1.5rem */
+        font-size: 1.2rem; /* Было 1.5rem */
     }
     
     .env-btn {
@@ -1640,13 +1640,13 @@ section {
         height: 24px;
     }
    .env-string {
-        top: 18px;       /* ← подняли выше, чтобы не уезжала вниз */
+        top: 13px;       /* ← подняли выше, чтобы не уезжала вниз */
    }
 .top-btn {
-        margin-bottom: -20px; /* ← уменьшили зазор */
+        margin-bottom: -15px; /* ← уменьшили зазор */
     }
     
     .bottom-btn {
-        margin-top: 15px;
+        margin-top: 10px;
     }
 }
