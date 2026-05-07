@@ -232,14 +232,24 @@
     </div>
 
     <section class="venue">
-        <h2 class="section-title">Место проведения</h2>
-        <div class="venue-image-container"><img src="Белая дача.jpg" alt="Место проведения" class="venue-image"></div>
-        <div class="venue-info">
-            <p class="venue-name">«Белая дача»</p>
-            <p class="venue-address">Банкет состоится по адресу:<br>г. Елабуга, ул. Садовая 2Б</p>
-            <a href="https://yandex.ru/maps/org/belaya_dacha/98656528942/?ll=52.001568%2C55.739666&z=16.99" target="_blank" class="btn btn-venue">Построить маршрут</a>
+    <h2 class="section-title">Место проведения</h2>
+    <div class="venue-image-container"><img src="Белая дача.jpg" alt="Место проведения" class="venue-image"></div>
+    <div class="venue-info">
+        <p class="venue-name">«Белая дача»</p>
+        <p class="venue-address">Банкет состоится по адресу:<br>г. Елабуга, ул. Садовая 2Б<br>Банкетный зал "Папа Вилла"</p>
+        
+        <!-- Кнопка выбора карт -->
+        <div class="map-buttons">
+            <button class="btn btn-venue" onclick="document.getElementById('map-choice').style.display='flex'">Построить маршрут</button>
+            
+            <div id="map-choice" class="map-choice-popup" style="display:none;">
+                <a href="https://yandex.ru/maps/org/belaya_dacha/98656528942/?ll=52.001568%2C55.739666&z=16.99" target="_blank" class="btn map-btn">Яндекс Карты</a>
+                <a href="https://2gis.ru/elabuga/firm/70000001050255163/51.999511%2C55.739837" target="_blank" class="btn map-btn">2ГИС</a>
+                <button class="btn map-btn map-close" onclick="document.getElementById('map-choice').style.display='none'">Отмена</button>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <div class="elven-divider">
         <svg viewBox="0 0 300 30" width="200" height="20">
