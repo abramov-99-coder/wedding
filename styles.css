@@ -1639,7 +1639,7 @@ section {
     }
     
     .env-buttons {
-        margin-top: -65px;
+        margin-top: -60px;
     }
     
     .env-btn {
@@ -1657,11 +1657,11 @@ section {
     }
     
     .bottom-btn {
-        margin-top: 5px;
+        margin-top: 15px;
     }
     
     .env-string {
-        top: 18px;
+        top: 16px;
     }
     
     .env-string svg {
