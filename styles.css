@@ -1619,34 +1619,72 @@ section {
 /* Адаптация */
 @media (max-width: 768px) {
     .env-card {
-        width: 320px;    /* Было 280px */
-        height: 420px;   /* Было 370px */
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 380 / 500;
+    }
+    
+    .env-body {
+        padding-top: 50%;
     }
     
     .env-flap-text {
-        font-size: 1.2rem; /* Было 1.5rem */
+        font-size: 1.2rem;
     }
-   .env-tap {
-        font-size: 1.2rem; /* Было 1.5rem */
+    
+    .env-tap {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+    
+    .env-buttons {
+        margin-top: -45px;
     }
     
     .env-btn {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
     
     .env-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
-   .env-string {
-        top: 13px;       /* ← подняли выше, чтобы не уезжала вниз */
-   }
-.top-btn {
-        margin-bottom: -15px; /* ← уменьшили зазор */
+    
+    .top-btn {
+        margin-bottom: -15px;
     }
     
     .bottom-btn {
         margin-top: 10px;
+    }
+    
+    .env-string {
+        top: 13px;
+    }
+    
+    .env-string svg {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .env-field {
+        padding: 0.6rem 0;
+    }
+    
+    .env-label,
+    .env-value {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .env-card {
+        width: 95vw;
+    }
+    
+    .env-flap-text {
+        font-size: 1.1rem;
     }
 }
