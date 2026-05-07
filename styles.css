@@ -113,7 +113,7 @@ body {
 
 .elven-epilog {
     font-family: 'Great Vibes', cursive;
-    font-size: 1.3rem;
+    font-size: 2.0rem;
     color: var(--gold);
     margin-top: 1.5rem;
     font-style: italic;
@@ -1057,7 +1057,7 @@ body {
 
 .footer-signature {
     font-family: 'Great Vibes', cursive;
-    font-size: 1.3rem;
+    font-size: 2.0rem;
     color: var(--gold);
     margin-top: 1rem;
     font-weight: 400;
@@ -1500,9 +1500,9 @@ section {
     position: absolute;
     top: 35%;
     left: 50%;
-    transform: translate(-50%, -130%);
-    font-family: 'Cormorant Garamond', cursive;
-    font-size: 1.8rem;     /* Было 1.8rem */
+    transform: translate(-50%, -200%);
+    font-family: 'Aniron', cursive;
+    font-size: 1.6rem;     /* Было 1.8rem */
     color: #c4a35a;
     opacity: 0.9;
     letter-spacing: 2px;
@@ -1573,7 +1573,7 @@ section {
 
 /* Текст нажать */
 .env-tap {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aniron', serif;
     font-size: 0.85rem;  /* Было 0.7rem */
     color: #c4a35a;
     letter-spacing: 5px; /* Было 4px */
